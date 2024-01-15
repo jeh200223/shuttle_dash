@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:timer_builder/timer_builder.dart';
 
+import '../../Constants/responsive.dart';
+
 class Header extends StatefulWidget {
   const Header ({Key ? key}) : super (key: key);
 
@@ -12,6 +14,7 @@ class Header extends StatefulWidget {
 class _HeaderState extends State<Header>{
   @override
   Widget build(BuildContext context) {
+    bool tablet = Responsive.isTablet(context);
     return Row(
       children: [
         Expanded(
@@ -30,7 +33,7 @@ class _HeaderState extends State<Header>{
                "스쿨버스 운행 안내 시스템",
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: 40,
+                  fontSize: tablet ? 27 : 40,
                   decoration: TextDecoration.none,
                 ),
                 textAlign: TextAlign.center,
@@ -47,7 +50,7 @@ class _HeaderState extends State<Header>{
                   return Text(
                     DateFormat('yyyy-MM-dd a hh:mm:ss').format(DateTime.now()),
                     style: TextStyle(
-                      fontSize: 40,
+                      fontSize: tablet ? 27 : 40,
                       color: Colors.black,
                       decoration: TextDecoration.none
                     ),
