@@ -17,7 +17,9 @@ class _infoListState extends State<infoList> {
     final List<String> now = <String> ["진접역", "롯데시네마", "동연평교차로", "진접역", "롯데시네마", "M타워", "주곡2교", "M타워"];
     final List<String> people = <String> ["15", "20", "21", "30", "11", "15", "24", "27"];
     final List<String> name = <String> ["오진태", "김영길", "이영태", "김영남", "이준구", "최호연", "이우진", "황준태"];
+    // 차량번호, 회사, 출발시간 등의 정보를 담은 리스트들을 임의로 정의
     return Container(
+      // 정보를 표시할 Container를 생성
       margin: EdgeInsets.all(10),
       decoration: BoxDecoration(
         border: Border.all(
@@ -27,6 +29,7 @@ class _infoListState extends State<infoList> {
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
+        // 표의 헤더 부분을 생성
         children: [
           Container(
             decoration: BoxDecoration(
@@ -35,6 +38,7 @@ class _infoListState extends State<infoList> {
               ),
             ),
             child: Row(
+              // 각 열의 제목을 표시하는 컨테이너들을 생성
               children: [
                 Expanded(
                   child: Container(
@@ -138,6 +142,7 @@ class _infoListState extends State<infoList> {
             ),
           ),
           Expanded(
+            // ListView를 사용하여 각 정보를 동적으로 생성
             flex: 1,
             child: Container(
               child: ListView.builder(
@@ -150,9 +155,11 @@ class _infoListState extends State<infoList> {
                   ),
                   child: Column(
                     children: [
+                      // 각 정보를 표시하는 Row를 생성
                       Row(
                         children: [
                           Expanded(
+                            // 차량 번호, 회사, 출발시간, 도착예정, 현재위치, 탑승인원, 기사명을 표시하는 각 컨테이너를 생성
                             child: Container(
                               decoration: BoxDecoration(
                                 border: Border(right: BorderSide(width: 1),
